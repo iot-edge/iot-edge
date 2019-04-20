@@ -1,0 +1,32 @@
+{
+  "name": "iot-edge",
+  "version": "2.0.0",
+  "description": "Internet of Things Edge Server",
+  "author": "Loren West <open_source@lorenwest.com>",
+  "homepage": "https://github.com/microclimates/iot-edge",
+  "keywords": [
+    "automation",
+    "docker",
+    "edge",
+    "grafana",
+    "graphite",
+    "internet of things",
+    "iot",
+    "mqtt"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microclimates/iot-edge.git"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "start": "js --spec"
+  }
+}
