@@ -16,7 +16,7 @@
 
 ### Prerequisites
 
-  * [NodeJS](https://nodejs.org) - Minimum version 8.x, recommend LTS versions
+  * [NodeJS](https://nodejs.org)
   * [Docker](https://www.docker.com/products) - Uses `docker-compose` from their Enterprise, Desktop or Engine products.
 
 ### Installation
