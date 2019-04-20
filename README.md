@@ -8,7 +8,7 @@
 * *Open* - Built with open source components, free license
 * *Powerful* - For enterprise grade deployment
 * *Extensible* - Stable core with plugin modules for customization
-* *Supported* - Developer tools for server management and plugin development
+* *Supported* - Developer tools for plugin development
 
 ## What is an Edge Server?
 
@@ -21,7 +21,7 @@
 
 ### Installation
 
-Run the following in a new folder for your server
+Run the following in a new folder
 
 ```
 npm install -g yo generator-edge
