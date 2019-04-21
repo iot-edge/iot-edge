@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Publish the local ":latest" version as the current version found in package.json
+# It requires a bin/build before this step
+#
+# Syntax: bin/publish [--no-build]
+
+cd `dirname $0`/..
+pkg_name=`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
+pkg_version=`grep '^  "version"' package.json | sed 's/  "version": "\(.*\)".*/\1/'`
+img_name="lorenwest/$pkg_name"
+img_latest="$img_name:latest"
+img_version="$img_name:$pkg_version"
+
+# Verify this version isn't published
+if bin/versions | grep $pkg_version
+then
+    echo ""
+    echo "Cannot publish over existing version $pkg_name:$pkg_version"
+    echo ""
+    echo "Change the version in package.json, and re-try."
+    exit 1
+fi
+
+# Build a fresh image unless overridden
+if test "$1" != "--no-build"
+then
+  bin/build
+fi
+
+echo ""
+echo "Publishing $img_version"
+echo ""
+docker tag $img_latest $img_version
+docker push $img_version
+
+echo ""
+echo "Publishing $img_latest"
+echo ""
+docker push $img_latest
+
+echo ""
+echo "To activate this version, run:"
+echo ""
+echo "  bin/tag uat (or prod)"

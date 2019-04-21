@@ -32,6 +32,7 @@ yo edge:server
 
 ```
 npm start
+npm restart
 npm stop
 ```
 
