@@ -1,6 +1,6 @@
 {
   "name": "iot-edge",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Internet of Things Edge Server",
   "author": "Microclimates, Inc <open_source@microclimates.com>",
   "homepage": "https://github.com/microclimates/iot-edge",
@@ -16,9 +16,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "config": "^3.1.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/microclimates/iot-edge.git"
@@ -29,6 +29,6 @@
   "scripts": {
     "start": "docker-compose up -d",
     "restart": "docker-compose restart",
-    "stop": "docker-compose down"
+    "stop": "docker-compose down -t 1"
   }
 }

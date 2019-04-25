@@ -5,100 +5,146 @@ services:
     container_name: nginx
     env_file: edge-env
     networks:
-      - back
+      - dmz
+      - lan
     ports:
-      - '8000:8000'
+      - '8000:80'
     volumes:
+      - './config/nginx/cdn:/mnt/cdn'
       - './config/nginx/nginx.conf:/etc/nginx/nginx.conf'
-      - './config/nginx/mc-edge.conf:/etc/nginx/mc-edge.conf'
+      - './config/nginx/iot-edge.conf:/etc/nginx/iot-edge.conf'
     restart: always
     depends_on:
       - nodered
       - graphite
       - grafana
+      - edge
   graphite:
     image: 'graphiteapp/graphite-statsd:1.1.4'
     container_name: graphite
     env_file: edge-env
     networks:
-      - back
-    ports:
-      - '8080:80'
-      - '2003-2004:2003-2004'
-      - '2023-2024:2023-2024'
-      - '8125:8125/udp'
-      - '8126:8126'
+      - lan
+    # ports:
+    #   - '8080:80'
+    #   - '2003-2004:2003-2004'
+    #   - '2023-2024:2023-2024'
+    #   - '8125:8125/udp'
+    #   - '8126:8126'
     volumes:
       - './config/graphite/local_settings.py:/opt/graphite/webapp/graphite/local_settings.py'
       - './config/graphite/carbon.conf:/opt/graphite/conf/carbon.conf'
       - './config/graphite/storage-aggregation.conf:/opt/graphite/conf/storage-aggregation.conf'
       - './config/graphite/storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf'
       - './config/graphite/statsd-config.js:/opt/statsd/config_udp.js'
+      - "./data/graphite:/opt/graphite/storage"
+      - "./data/graphite/log:/var/log"
     restart: always
   mqtt:
     image: 'eclipse-mosquitto:1.5'
     container_name: mqtt
     env_file: edge-env
     networks:
-      - back
+      - dmz
+      - lan
     ports:
       - '1883:1883'
       - '9001:9001'
     volumes:
       - './config/mqtt:/mosquitto/config'
+      - './data/mqtt:/mosquitto/data'
     restart: always
   nodered:
-    image: 'lorenwest/iot-edge-node-red:prod'
+    image: 'lorenwest/iot-edge-node-red:1.0.3'
     container_name: nodered
     env_file: edge-env
     depends_on:
       - mqtt
     networks:
-      - front
-      - back
-    ports:
-      - '1880:1880'
+      - lan
+    # ports:
+    #   - '1880:1880'
     volumes:
       - './config/node-red/settings.js:/data/settings.js'
+      - './data/node-red:/data'
     restart: always
     depends_on:
       - "mqtt"
   grafana:
-    image: 'grafana/grafana:5.3.4'
+    image: 'grafana/grafana:6.1.4'
     container_name: grafana
     env_file:
       - edge-env
     networks:
-      - back
-    ports:
-      - '3000:3000'
+      - lan
+    # ports:
+    #   - '3000:3000'
+    depends_on:
+      - "loki"
     volumes:
       - './config/grafana:/etc/grafana'
-      - './config/grafana:/usr/share/grafana/public/mc-grafana'
+      - './data/grafana/log:/var/log/grafana'
+      - './data/grafana/plugins:/var/lib/grafana/plugins'
+      - './data/grafana:/var/lib/grafana'
+      - './config/nginx/cdn/grafana/6.1.4/index.html:/usr/share/grafana/public/views/index.html'
+    restart: always
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - './config/promtail:/etc/promtail'
+      - './data/promtail:/promdata'
+    command: -config.file=/etc/promtail/docker-config.yaml
+    networks:
+      - lan
+    # ports:
+    #   - '9080:9080'
+    depends_on:
+      - "loki"
+  loki:
+    image: 'grafana/loki:latest'
+    container_name: loki
+    networks:
+      - lan
+    # ports:
+    #   - '3100:3100'
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - './config/loki:/etc/loki'
+      - './data/loki:/tmp/loki'
     restart: always
   edge:
-    image: 'lorenwest/iot-edge-node-js'
+    image: 'lorenwest/iot-edge-node-js:1.0.3'
     container_name: edge
     env_file:
       - edge-env
     networks:
-      - back
-      - front
-    ports:
-      - '9002:9002'
+      - lan
+    # ports:
+    #   - '9002:9002'
     volumes:
-      - './config/grafana:/etc/grafana'
-      - './config/grafana:/usr/share/grafana/public/mc-grafana'
+      - './config/edge:/iot-edge/config'
+      - './data/edge:/iot-edge/data'
+      - './lib:/iot-edge/lib'
+      - './app.js:/iot-edge/app.js'
+      - './node_modules:/iot-edge/node_modules'
+      - './config:/iot-services/config'
+      - './data:/iot-services/data'
     depends_on:
-      - "grafana"
+      - 'grafana'
+      - 'nodered'
+      - 'graphite'
+      - 'promtail'
     restart: always
     environment:
       - NODE_ENV=production
-    working_dir: ./edge/node_modules/iot-edge
+    working_dir: /iot-edge
     entrypoint:
       -  node
       -  app.js
 networks:
-  front:
+  dmz:
     driver: bridge
-  back: null
+  lan:
+    driver: bridge
+

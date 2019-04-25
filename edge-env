@@ -1,4 +1,3 @@
-HUB_ID=edge
-DATA_DIR=.
-HUB_NAME=IoT Edge Server
+EDGE_ID=edge
+EDGE_NAME=IoT Edge Server
 TZ=America/Los_Angeles

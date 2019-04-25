@@ -1,7 +1,7 @@
 {
   "name": "iot-edge-node-red",
   "description": "A visual tool for wiring the Internet of Things",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MIT",
   "scripts": {
     "start": "node $NODE_OPTIONS node_modules/node-red/red.js -v $FLOWS"

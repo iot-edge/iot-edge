@@ -10,8 +10,6 @@
 * *Extensible* - Stable core with plugin modules for customization
 * *Supported* - Developer tools for plugin development
 
-## What is an Edge Server?
-
 ## Quick Start
 
 ### Prerequisites
@@ -36,11 +34,11 @@ npm restart
 npm stop
 ```
 
-Articles
---------
+## Articles
 
-License
--------
+### What is an Edge Server?
+
+## License
 
 May be freely distributed under the [MIT license](https://raw.githubusercontent.com/microclimates/iot-edge/master/LICENSE).
 

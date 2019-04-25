@@ -1,5 +1,5 @@
 # Same as regular node-red image, but based on iot-edge-node-js
-FROM lorenwest/iot-edge-node-js:prod
+FROM lorenwest/iot-edge-node-js:1.0.3
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
