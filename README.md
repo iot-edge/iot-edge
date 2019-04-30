@@ -15,7 +15,7 @@
 ### Prerequisites
 
   * [NodeJS](https://nodejs.org)
-  * [Docker](https://www.docker.com/products) - Uses `docker-compose` from their Enterprise, Desktop or Engine products.
+  * [Docker](https://www.docker.com/products) - Uses `docker-compose` for coordination
 
 ### Installation
 

@@ -8,7 +8,7 @@
 cd `dirname $0`/..
 pkg_name=`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
 pkg_version=`grep '^  "version"' package.json | sed 's/  "version": "\(.*\)".*/\1/'`
-img_name="lorenwest/$pkg_name"
+img_name="microclimates/$pkg_name"
 img_latest="$img_name:latest"
 img_version="$img_name:$pkg_version"
 

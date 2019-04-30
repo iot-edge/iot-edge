@@ -5,7 +5,7 @@
 # Syntax: bin/build
 
 cd `dirname $0`/..
-img_name=lorenwest/`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
+img_name=microclimates/`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
 img_latest="$img_name:latest"
 
 echo ""
