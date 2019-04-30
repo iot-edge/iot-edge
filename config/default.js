@@ -1,5 +1,10 @@
 module.exports = {
   "iot-edge": {
+    site: {
+      id: "edge",
+      name: "Edge Site",
+      TZ: "America/Los_Angeles"
+    },
     server: {
       port: 9002,
       interface: "0.0.0.0"
