@@ -21,14 +21,14 @@
 
 Run the following in a new folder
 
-```
+```bash
 npm install -g yo generator-edge
-yo edge:server
+yo edge
 ```
 
 ### Starting and Stopping
 
-```
+```bash
 npm start
 npm restart
 npm stop
