@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+img_name=microclimates/`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
+
+wget -q https://registry.hub.docker.com/v1/repositories/${img_name}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# Activate a particular version for UAT or PROD
+# This publishes the specified tag to the specified version
+# (run from a docker directory)
+
+pkg_name=`grep '^  "name"' package.json | sed 's/  "name": "\(.*\)",$/\1/'`
+tag_to_activate="$1"
+pkg_version="$2"
+img_name="microclimates/$pkg_name"
+img_version="$img_name:$pkg_version"
+tag_version="$img_name:$tag_to_activate"
+
+if test "$1" = ""
+then
+    echo "Activate a specific version"
+    echo ""
+    echo "  Syntax: $0 tag (prod|uat|cusom) [version=pkgjson.version]"
+    echo "  Example: $0 prod 1.0.4"
+    echo -n "  Current versions:  "
+    bin/versions
+    exit 1
+fi
+
+# Default to the latest version
+if test "$pkg_version" = ""
+then
+  pkg_version=`grep '^  "version"' package.json | sed 's/  "version": "\(.*\)".*/\1/'`
+  img_version="$img_name:$pkg_version"
+fi
+
+# Make sure we have the local version
+docker pull $img_version
+echo "Return code: $?"
+if test ! $? = 0
+then
+    echo ""
+    echo "ERROR: The version must be published before activating. Current versions:"
+    echo ""
+    bin/versions
+    exit 1
+fi
+
+echo ""
+echo "Activating version $pkg_version as $tag_to_activate"
+echo ""
+
+# Now tag it and push the tag to the registry
+docker tag $img_version $tag_version
+docker push $tag_version
+if test ! $? = 0
+then
+    echo "ERROR Publishing"
+    exit 1
+fi
+
+echo ""
+echo "Activated version $pkg_version as $tag_to_activate. Current versions:"
+echo ""
+bin/versions
