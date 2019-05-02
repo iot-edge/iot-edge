@@ -1,9 +1,7 @@
 {
   "name": "iot-edge-server",
   "description": "Docker image for the iot-edge server",
-  "version": "1.0.4",
+  "version": "2.3.0",
   "license": "MIT",
-  "dependencies": {
-    "iot-edge": "~2.2.1"
-  }
+  "dependencies": {}
 }

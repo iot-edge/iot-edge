@@ -57,4 +57,4 @@ fi
 echo ""
 echo "Activated version $pkg_version as $tag_to_activate. Current versions:"
 echo ""
-bin/versions
+../bin/versions

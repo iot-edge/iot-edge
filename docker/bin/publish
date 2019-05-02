@@ -42,4 +42,4 @@ docker push $img_latest
 echo ""
 echo "To activate this version, run:"
 echo ""
-echo "  bin/tag uat (or prod)"
+echo "  ../bin/tag uat (or prod)"
