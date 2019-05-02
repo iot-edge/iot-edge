@@ -56,8 +56,6 @@
     "node": ">= 8.0.0"
   },
   "scripts": {
-    "start": "docker-compose up -d",
-    "restart": "docker-compose restart",
-    "stop": "docker-compose down -t 1"
+    "start": "node app.js"
   }
 }
