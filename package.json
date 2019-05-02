@@ -15,6 +15,9 @@
     "mqtt"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "dependencies": {
     "aws-sdk": "^2.447.0",
     "bluebird": "^3.5.4",
