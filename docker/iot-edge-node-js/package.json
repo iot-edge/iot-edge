@@ -1,5 +1,8 @@
 {
   "name": "iot-edge-node-js",
   "version": "1.0.6",
+  "publishConfig": {
+    "registry": "https://docker-publish-only.org"
+  },
   "license": "MIT"
 }

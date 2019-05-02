@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node $NODE_OPTIONS node_modules/node-red/red.js -v $FLOWS"
   },
+  "publishConfig": {
+    "registry": "https://docker-publish-only.org"
+  },
   "dependencies": {
     "node-red": "^0.19.5",
     "node-red-contrib-cron": "0.0.4",
