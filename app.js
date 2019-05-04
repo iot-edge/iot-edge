@@ -39,7 +39,7 @@ app.use(require('./lib/middleware').finalErrorHandler())
 require('./lib/bootstrap')()
   .then(function() {
     var http = require('http')
-    var fqdn = config.get('externalExposure.serverFQDN')
+    var fqdn = config.get('externalExposure.fqdn')
     var externalPort = config.get('externalExposure.httpPort')
     var internalPort = config.get('server.port')
     var interface = config.get('server.interface')

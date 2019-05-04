@@ -10,15 +10,15 @@ module.exports = {
       interface: "0.0.0.0"
     },
     externalExposure: {
-      serverFQDN: "localhost",
-      httpPort: 8000,
-      mqttPort: 1883,
-      mqttWebSocketPort: 9001
+      fqdn: process.env.SITE_FQDN || "localhost",
+      httpPort: process.env.HTTP_PORT || 8000,
+      mqttPort: process.env.MQTT_PORT || 1883,
+      mqttWebSocketPort: process.env.MQTT_WS_PORT || 9001
     },
     persist: {
       store: 'file',
       file: {
-        dir: '/mnt/edge/persist'
+        dir: '/mnt/data/edge/persist'
       }
     },
     grafana: {
