@@ -1,7 +1,7 @@
 {
   "name": "iot-edge-server",
   "description": "Docker image for the iot-edge server",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://docker-publish-only.org"
