@@ -1,7 +1,7 @@
 {
-  "name": "iot-edge-node-red",
+  "name": "node-red",
   "description": "A visual tool for wiring the Internet of Things",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "scripts": {
     "start": "node $NODE_OPTIONS node_modules/node-red/red.js -v $FLOWS"
@@ -10,7 +10,7 @@
     "registry": "https://docker-publish-only.org"
   },
   "dependencies": {
-    "node-red": "^0.19.5",
+    "node-red": "^0.20.5",
     "node-red-contrib-cron": "0.0.4",
     "node-red-contrib-ifttt": "^0.3.1",
     "node-red-contrib-statsd": "^1.2.3",

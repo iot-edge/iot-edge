@@ -4,7 +4,7 @@ FROM node:10-jessie-slim
 # Mosquitto clients - for password management and MQTT I/O
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      mosquitto mosquitto-clients
+      vim mosquitto mosquitto-clients
 
 # Graphicsmagick - for graphics automation
 RUN apt-get update && \

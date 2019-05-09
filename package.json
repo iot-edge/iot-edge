@@ -1,9 +1,9 @@
 {
   "name": "iot-edge",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Internet of Things Edge Server",
-  "author": "Microclimates, Inc <open_source@microclimates.com>",
-  "homepage": "https://github.com/microclimates/iot-edge",
+  "author": "Microclimates <open_source@microclimates.com>",
+  "homepage": "https://github.com/iot-edge/iot-edge",
   "keywords": [
     "automation",
     "docker",
@@ -53,7 +53,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/microclimates/iot-edge.git"
+    "url": "https://github.com/iot-edge/iot-edge.git"
   },
   "engines": {
     "node": ">= 8.0.0"

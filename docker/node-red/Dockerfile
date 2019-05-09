@@ -1,5 +1,5 @@
-# Same as regular node-red image, but based on iot-edge-node-js
-FROM microclimates/iot-edge-node-js:prod
+# Same as regular node-red image, but based on iotedge/node-js
+FROM iotedge/node-js:prod
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red

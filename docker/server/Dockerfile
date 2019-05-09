@@ -1,5 +1,5 @@
-# The iot-edge server based on iot-edge-node-js
-FROM microclimates/iot-edge-node-js:prod
+# The iot-edge server based on iotedge/node-js
+FROM iotedge/node-js:prod
 
 # Edge server
 RUN npm install -g iot-edge@2.3.2

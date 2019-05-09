@@ -30,7 +30,6 @@ yo edge
 
 ```bash
 npm start
-npm restart
 npm stop
 ```
 
@@ -40,7 +39,7 @@ npm stop
 
 ## License
 
-May be freely distributed under the [MIT license](https://raw.githubusercontent.com/microclimates/iot-edge/master/LICENSE).
+May be freely distributed under the [MIT license](https://raw.githubusercontent.com/iot-edge/iot-edge/master/LICENSE).
 
 Copyright (c) 2019 Microclimates, Inc
-[and other contributors](https://github.com/microclimates/iot-edge/graphs/contributors)
+[and other contributors](https://github.com/iot-edge/iot-edge/graphs/contributors)

@@ -1,9 +1,9 @@
 # Docker images for the iot-edge server project
 
 The utilities in the /bin directory are to be run from within one of the 
-docker direcories. Example: `cd iot-edge-node-js; ../bin/build`
+docker direcories. Example: `cd node-js; ../bin/build`
 
-## iot-edge-node-js
+## iotedge/node-js
 
 An LTS version of NodeJS with a trim O/S and the following extensions
 
@@ -13,10 +13,10 @@ An LTS version of NodeJS with a trim O/S and the following extensions
 
 This image is used as the baseline for other iot-edge images
 
-## iot-edge-server
+## iotedge/server
 
-The docker image for the iot-edge server, based on iot-edge-node-js
+The docker image for the iot-edge server, based on iotedge/node-js
 
-## iot-edge-node-red
+## iotedge/node-red
 
-A NodeRed distribution based on the iot-edge-node-js image
+A NodeRed distribution based on the iotedge/node-js image
