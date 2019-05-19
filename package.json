@@ -1,7 +1,7 @@
 {
   "name": "iot-edge",
   "version": "2.3.3",
-  "description": "Internet of Things Edge Server",
+  "description": "Open IoT Edge Server",
   "author": "Microclimates <open_source@microclimates.com>",
   "homepage": "https://github.com/iot-edge/iot-edge",
   "keywords": [
