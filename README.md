@@ -1,21 +1,23 @@
 # <img src="https://github.com/iot-edge/iot-edge-docs/raw/master/docs/_media/iot-edge-green-bg-100.png" width="60"/><br/>Open IoT Edge Server
 
-The Open IoT Edge project brings best of breed open source components together into a
-server that lives on the edge - close to the action.
+An [Edge Server](https://en.wikipedia.org/wiki/Edge_computing) is a software device deployed close to systems requiring integration and automation.
 
-This server works equally well on the work floor, in a branch office, or in the cloud - wherever automation is needed.
+The [Open IoT Edge](https://github.com/iot-edge) project brings best of breed components together into a full featured, easy to use edge server.
+
+This server can be deployed to the work floor, in a branch office, or in the cloud - wherever integration makes the most sense.
 
 It uses <img src="https://www.docker.com/sites/default/files/d8/Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x1.png" alt="Docker" width="16"/>
-[Docker](https://www.docker.com) to compose the following tools into a full featured automation server:
+[Docker](https://www.docker.com) to compose the following components into a full featured edge server:
 
-- [<img src="https://grafana.com/img/fav32.png" alt="Grafana" width="16"/> Grafana](https://grafana.com/) - Beautiful analytics, monitoring, and user interface
-- [<img src="https://nodered.org/favicon.ico" alt="Node-Red" width="16"/> Node-Red](https://nodered.org) - Flow-based automation for the Internet of Things
-- [<img src="https://iot-edge.github.io/iot-edge-docs/favicon.ico" width="16"/> IoT-Edge](https://github.com/iot-edge/iot-edge) - For managing devices and automation plugins
-- [<img src="https://graphiteapp.org/img/favicon-32x32.png" alt="Graphite" width="16"/> Graphite](https://graphiteapp.org/) - Time-Series database for metrics storage
-- [<img src="https://github.com/grafana/loki/raw/master/docs/logo.png" alt="Loki" width="16"/> Loki](https://grafana.com/loki) - Activity database for event and log storage
-- [<img src="https://mosquitto.org/favicon-16x16.png" alt="Mosquitto" width="16"/> Mosquitto](https://mosquitto.org) - IoT messaging data bus
+- <img src="https://grafana.com/img/fav32.png" alt="Grafana" width="16"/> [Grafana](https://grafana.com/) - Beautiful analytics, monitoring, and user interface
+- <img src="https://nodered.org/favicon.ico" alt="Node-Red" width="16"/> [Node-Red](https://nodered.org) - Flow-based automation for the Internet of Things
+- <img src="_media/iot-edge-green-bg-16.png" width="16"/> [IoT-Edge](https://github.com/iot-edge/iot-edge) - Device management and automation plugins
+- <img src="https://graphiteapp.org/img/favicon-32x32.png" alt="Graphite" width="16"/> [Graphite](https://graphiteapp.org/) - Time-Series database for metrics storage
+- <img src="https://avatars0.githubusercontent.com/u/8270030?s=200&v=4" alt="Statsd" width="16"/> [Statsd](https://www.npmjs.com/package/statsd) - Collection and aggregation of realtime application metrics
+- <img src="https://github.com/grafana/loki/raw/master/docs/logo.png" alt="Loki" width="16"/> [Loki](https://grafana.com/loki) - Activity database for event and log storage
+- <img src="https://mosquitto.org/favicon-16x16.png" alt="Mosquitto" width="16"/> [Mosquitto](https://mosquitto.org) - IoT sensor data bus
 - <img src="https://docsify.js.org/_media/favicon.ico" alt="Docsify" width="16"/> [Docsify](https://docsify.js.org) - A magical documentation site generator
-- [<img src="https://www.nginx.com/wp-content/uploads/2019/01/nginx-favicon.png" alt="Nginx" width="16"/> Nginx](https://www.nginx.com) - Enterprise grade routing, logging, and security
+- <img src="https://www.nginx.com/wp-content/uploads/2019/01/nginx-favicon.png" alt="Nginx" width="16"/> [Nginx](https://www.nginx.com) - Enterprise grade routing, logging, and security
 
 ## Quick Start
 

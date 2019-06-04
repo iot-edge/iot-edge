@@ -1,8 +1,8 @@
 var Router = require('express-promise-router')
 var AuthC = require('./lib/authenticate')
 var Status = require('./lib/status')
-var publicDir = require('path').join(__dirname, 'public')
-var publicFS = require('serve-static')(publicDir)
+var staticDir = require('path').join(__dirname, 'static')
+var staticFS = require('serve-static')(staticDir)
 
 /**
  * This is the mini-app representing the site service
@@ -11,7 +11,7 @@ var publicFS = require('serve-static')(publicDir)
  */
 var router = module.exports = Router()
 
-// Common middleware for /hub
+// Common middleware for /edge
 router.use(AuthC.api)
 
 // API routes
@@ -30,7 +30,7 @@ router.use(require('./lib/api/watches'))
 router.use(require('./lib/api/zones'))
 
 // Standard routes
-router.use  ('/public', publicFS)
+router.use  ('/static', staticFS)
 router.get  ('/status', Status.getStatus)
 
 // Specialty routes

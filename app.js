@@ -7,8 +7,7 @@
 // /_/  \____/\__/     \___/\__,_/  _\__, / \___/ 
 //                                  /____/        
 //
-// The following is an attempt to produce the above in a log viewer
-//
+// The following gobbledeegook is an attempt to produce the above in a log viewer
 console.log(
   '                                 /____/               \n' +
   '/_/  \\____/\\__/     \\___/\\__,_/  _\\__, / \\___/  \n' +
