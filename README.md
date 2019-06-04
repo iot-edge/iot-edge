@@ -13,7 +13,7 @@ It uses <img src="https://www.docker.com/sites/default/files/d8/Docker-R-Logo-08
 - <img src="https://nodered.org/favicon.ico" alt="Node-Red" width="16"/> [Node-Red](https://nodered.org) - Flow-based automation for the Internet of Things
 - <img src="_media/iot-edge-green-bg-16.png" width="16"/> [IoT-Edge](https://github.com/iot-edge/iot-edge) - Device management and automation plugins
 - <img src="https://graphiteapp.org/img/favicon-32x32.png" alt="Graphite" width="16"/> [Graphite](https://graphiteapp.org/) - Time-Series database for metrics storage
-- <img src="https://avatars0.githubusercontent.com/u/8270030?s=200&v=4" alt="Statsd" width="16"/> [Statsd](https://www.npmjs.com/package/statsd) - Collection and aggregation of realtime application metrics
+- <img src="https://avatars0.githubusercontent.com/u/8270030?s=200&v=4" alt="Statsd" width="16"/> [Statsd](https://www.npmjs.com/package/statsd) - Realtime metrics collection and aggregation
 - <img src="https://github.com/grafana/loki/raw/master/docs/logo.png" alt="Loki" width="16"/> [Loki](https://grafana.com/loki) - Activity database for event and log storage
 - <img src="https://mosquitto.org/favicon-16x16.png" alt="Mosquitto" width="16"/> [Mosquitto](https://mosquitto.org) - IoT sensor data bus
 - <img src="https://docsify.js.org/_media/favicon.ico" alt="Docsify" width="16"/> [Docsify](https://docsify.js.org) - A magical documentation site generator
