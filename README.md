@@ -47,7 +47,7 @@ http://localhost:8000/
 
 ## Up Next...
 
-Visit our [documentation pages](https://github.com/iot-edge/documentation) to get the most from your automation server
+Visit our [documentation pages](https://github.com/iot-edge/iot-edge-docs) to get the most from your automation server
 
 ## Project Guidelines
 
