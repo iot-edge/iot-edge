@@ -2,8 +2,8 @@
 FROM iotedge/node-js:prod
 
 # Edge server
-RUN npm install -g iot-edge@2.3.3
+RUN npm install -g iot-edge@2.4.0
 EXPOSE 9002
 WORKDIR /usr/local/lib/node_modules/iot-edge
 
-CMD ["node", "app.js"]
+CMD ["sh", "-c", "exec /startup.sh"]
