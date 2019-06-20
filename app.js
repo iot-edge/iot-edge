@@ -57,10 +57,10 @@ require('./lib/bootstrap')()
     require('./lib/socket-io')(io);
     server.listen(internalPort, interface)
     console.log('Startup in ' + (Date.now() - start) + 'ms.')
-    console.log(`Serving API on http://${fqdn}:${externalPort}/`)
+    console.log(`⚡⚡ Edge server available on http://${fqdn}:${externalPort}/ ⚡⚡`)
   })
   .catch(function(err) {
-    console.error('Problem starting edge. Restarting in 10 seconds.');
+    console.error('Problem starting edge server. Restarting in 10 seconds.');
     console.error(err);
     setTimeout(function(){
       process.exit(1);
