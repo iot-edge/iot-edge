@@ -23,6 +23,6 @@ EXPOSE 1880
 
 # Environment variable holding file path for flows configuration
 ENV FLOWS=flows.json
-ENV NODE_PATH=/data/node_modules:/usr/src/node-red/node_modules
+ENV NODE_PATH=/data/node_modules:/usr/src/node-red/node_modules:/usr/local/lib/node_modules
 
 CMD ["npm", "start", "--", "--userDir", "/data"]

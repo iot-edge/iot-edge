@@ -13,7 +13,7 @@ img_latest="$img_name:latest"
 img_version="$img_name:$pkg_version"
 
 # Verify this version isn't published
-if bin/versions | grep $pkg_version
+if ../bin/versions | grep $pkg_version
 then
     echo ""
     echo "Cannot publish over existing version $pkg_name:$pkg_version"
@@ -25,7 +25,7 @@ fi
 # Build a fresh image unless overridden
 if test "$1" != "--no-build"
 then
-  bin/build
+  ../bin/build
 fi
 
 echo ""
